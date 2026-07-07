@@ -1,0 +1,250 @@
+.term-crt {
+  width: 100%;
+  height: 100%;
+  background: #010802;
+  color: #7dffb3;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 15px;
+  line-height: 1.45;
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  box-shadow: inset 0 0 40px rgba(34, 255, 140, 0.08);
+  user-select: text;
+}
+
+/* subtle standby glow so the screen doesn't read as a flat dead rectangle */
+.term-off {
+  background: radial-gradient(circle at 50% 40%, #051006 0%, #010401 75%);
+}
+
+.term-standby {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: rgba(125, 255, 179, 0.55);
+  text-transform: lowercase;
+  animation: term-standby-pulse 3.2s ease-in-out infinite;
+}
+
+.term-standby-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22ff8c;
+  box-shadow: 0 0 10px 2px rgba(34, 255, 140, 0.7);
+  animation: term-blink-dot 1.6s ease-in-out infinite;
+}
+
+@keyframes term-standby-pulse {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 0.95; }
+}
+
+@keyframes term-blink-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+/* power-on flicker: a couple of quick brightness snaps before settling,
+   like a CRT tube striking */
+.term-on {
+  animation: term-power-on 0.7s steps(1, end) 1;
+}
+
+@keyframes term-power-on {
+  0%   { filter: brightness(0.2); }
+  8%   { filter: brightness(1.4); }
+  12%  { filter: brightness(0.3); }
+  20%  { filter: brightness(1.2); }
+  26%  { filter: brightness(0.4); }
+  40%  { filter: brightness(1.05); }
+  100% { filter: brightness(1); }
+}
+
+.term-scanlines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0px,
+    rgba(0, 0, 0, 0) 2px,
+    rgba(0, 0, 0, 0.18) 3px,
+    rgba(0, 0, 0, 0) 4px
+  );
+  mix-blend-mode: multiply;
+  opacity: 0.55;
+  animation: term-scan-drift 9s linear infinite;
+}
+
+@keyframes term-scan-drift {
+  0%   { background-position: 0 0; }
+  100% { background-position: 0 200px; }
+}
+
+.term-vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 0 0 60px 12px rgba(0, 0, 0, 0.65);
+}
+
+.term-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  background: rgba(34, 255, 140, 0.06);
+  border-bottom: 1px solid rgba(34, 255, 140, 0.15);
+  position: relative;
+  z-index: 2;
+}
+
+.term-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.term-dot-red { background: #ff5f57; }
+.term-dot-yellow { background: #febc2e; }
+.term-dot-green { background: #28c840; }
+
+.term-titletext {
+  margin-left: 8px;
+  font-size: 12px;
+  color: rgba(125, 255, 179, 0.7);
+  letter-spacing: 0.02em;
+}
+
+.term-close {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: rgba(125, 255, 179, 0.6);
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 2px 8px;
+  transition: color 0.15s ease, background 0.15s ease;
+  border-radius: 4px;
+}
+.term-close:hover {
+  color: #ff5f57;
+  background: rgba(255, 95, 87, 0.12);
+}
+
+.term-body {
+  position: relative;
+  z-index: 2;
+  height: calc(100% - 34px);
+  overflow-y: auto;
+  padding: 12px 14px;
+  text-shadow: 0 0 6px rgba(125, 255, 179, 0.55);
+  cursor: text;
+}
+
+.term-body::-webkit-scrollbar { width: 6px; }
+.term-body::-webkit-scrollbar-thumb {
+  background: rgba(34, 255, 140, 0.35);
+  border-radius: 4px;
+}
+
+.term-line {
+  white-space: pre-wrap;
+  word-break: break-word;
+  min-height: 1.2em;
+  animation: term-line-in 0.12s ease-out;
+}
+
+@keyframes term-line-in {
+  from { opacity: 0; transform: translateY(2px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.term-line-boot { color: rgba(125, 255, 179, 0.65); }
+.term-line-echo { color: #eafff2; }
+.term-line-error { color: #ff8a7a; }
+.term-line-success { color: #22ff8c; font-weight: 600; }
+
+.term-inputline {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  position: relative;
+}
+
+.term-prompt {
+  color: #22ff8c;
+  font-weight: 600;
+  flex-shrink: 0;
+  white-space: pre;
+}
+
+.term-input {
+  flex: 1 1 auto;
+  min-width: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #eafff2;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  caret-color: #22ff8c;
+  padding: 0;
+  text-shadow: 0 0 6px rgba(125, 255, 179, 0.55);
+}
+
+.term-input::placeholder {
+  color: rgba(125, 255, 179, 0.3);
+}
+
+.term-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 1.1em;
+  background: #22ff8c;
+  box-shadow: 0 0 8px rgba(34, 255, 140, 0.8);
+  animation: term-cursor-blink 1s step-start infinite;
+  vertical-align: text-bottom;
+}
+
+.term-cursor-inline {
+  margin-left: 1px;
+  animation: none; /* solid while actively typing, no blink-out mid-character */
+}
+
+@keyframes term-cursor-blink {
+  50% { opacity: 0; }
+}
+
+.term-line-code {
+  color: #7dffb3;
+}
+
+/* Fullscreen mode — used on small / touch viewports where the embedded 3D
+   screen is too small to comfortably read or type on. Same terminal, just
+   presented as a real fixed overlay instead of a CSS3D-projected plane. */
+.term-fullscreen {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  border-radius: 0;
+  font-size: 16px; /* 16px+ stops iOS Safari auto-zooming into the input on focus */
+}
+
+.term-fullscreen .term-body {
+  height: calc(100% - 40px);
+  padding: 14px 16px calc(14px + env(safe-area-inset-bottom, 0px)) 16px;
+}
+
+.term-fullscreen .term-titlebar {
+  padding: 12px 12px calc(12px + env(safe-area-inset-top, 0px)) 12px;
+}

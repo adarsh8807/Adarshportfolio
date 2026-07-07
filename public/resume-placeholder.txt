@@ -1,0 +1,1 @@
+Replace this with your real resume PDF saved as "resume.pdf" in this same /public folder.
