@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Build folder
+dist/
+
+# Environment variables
+.env
+.env.local
+
+# Log files
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Vercel
+.vercel/
+
+# IDE files
+.vscode/
+.idea/

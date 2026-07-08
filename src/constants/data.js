@@ -15,7 +15,7 @@ export const profile = {
   tagline:
     "I build fast, reliable web applications end to end — from React interfaces to Spring Boot APIs — and I'm looking for my next internship or full-time role.",
   location: 'Mumbai, Maharashtra, India',
-  email: 'alokpandey8807@example.com',
+  email: 'alokpandey8807@gmail.com',
   phone: '+91 7379623345',
   github: 'https://github.com/adarsh8807',
   linkedin: 'https://linkedin.com/in/adarshpandey-software',
@@ -112,7 +112,7 @@ export const projects = [
       'A dark, high-contrast landing page for a Mumbai gym chain — hero stats, programs, trainers, and a pricing section built to convert visitors into members.',
     tech: ['React', 'Tailwind CSS', 'Framer Motion'],
     image: '/projects/gym-fitness-landing.png',
-    demo: '#',
+    demo: 'https://thejohnfitness.in',
     code: '#',
   },
   {
@@ -121,7 +121,7 @@ export const projects = [
       "A cinematic portfolio site for a fine-art photographer, with a full-bleed hero, gallery, and a dedicated 3D view section for showcasing work.",
     tech: ['React', 'Three.js', 'Tailwind CSS'],
     image: '/projects/lumen-photography-portfolio.png',
-    demo: '#',
+    demo: 'https://lumina-murcha.vercel.app',
     code: '#',
   },
   {
@@ -130,29 +130,10 @@ export const projects = [
       'A marketing site for a software agency — services, portfolio, pricing, and blog sections, with client logos and animated stats up top.',
     tech: ['React', 'Node.js', 'Tailwind CSS'],
     image: '/projects/yugnova-agency-site.png',
-    demo: '#',
+    demo: 'https://yugnova-one.vercel.app',
     code: '#',
   },
-  {
-    title: 'QR Attendance System',
-    description:
-      'A QR-code based attendance tool for classrooms that logs check-ins in real time and exports reports.',
-    tech: ['React', 'Node.js', 'MongoDB'],
-    image:
-      'https://images.unsplash.com/photo-1595079676339-1534801ad6cf?q=80&w=800&auto=format&fit=crop',
-    demo: '#',
-    code: '#',
-  },
-  {
-    title: 'Stock Market Dashboard',
-    description:
-      'A real-time dashboard tracking watchlists and portfolio performance with interactive charts.',
-    tech: ['React', 'Java', 'MySQL'],
-    image:
-      'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=800&auto=format&fit=crop',
-    demo: '#',
-    code: '#',
-  },
+
   {
     title: 'Personal Portfolio (this site)',
     description:
@@ -160,7 +141,7 @@ export const projects = [
     tech: ['React', 'Three.js', 'Framer Motion'],
     image:
       'https://images.unsplash.com/photo-1550439062-609e1531270e?q=80&w=800&auto=format&fit=crop',
-    demo: '#',
+    demo: 'https://adarshp-one.vercel.app',
     code: '#',
   },
 ]
@@ -196,7 +177,7 @@ export const certifications = [
   {
     title: 'Java Programming Certification',
     org: 'Course Provider',
-    year: '2023',
+    year: '2025',
     image:
       'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800&auto=format&fit=crop',
     url: '#',
@@ -204,7 +185,7 @@ export const certifications = [
   {
     title: 'React — Advanced Concepts',
     org: 'Course Provider',
-    year: '2024',
+    year: '2025',
     image:
       'https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=800&auto=format&fit=crop',
     url: '#',
