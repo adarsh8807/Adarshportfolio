@@ -66,7 +66,7 @@ export default function Contact() {
             </p>
 
             {[
-              { icon: FiMail, label: profile.email, href: `mailto:${profile.email}` },
+              { icon: FiMail, label: profile.email, href: `<mailto:${profile.email}>` },
               { icon: FiPhone, label: profile.phone, href: `tel:${profile.phone.replace(/\s/g, '')}` },
               { icon: FiMapPin, label: profile.location, href: null },
             ].map(({ icon: Icon, label, href }) => (

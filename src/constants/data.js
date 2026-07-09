@@ -121,7 +121,7 @@ export const projects = [
       "A cinematic portfolio site for a fine-art photographer, with a full-bleed hero, gallery, and a dedicated 3D view section for showcasing work.",
     tech: ['React', 'Three.js', 'Tailwind CSS'],
     image: '/projects/lumen-photography-portfolio.png',
-    demo: 'https://lumina-murcha.vercel.app',
+    demo: 'https://lumina-seven-mocha.vercel.app/',
     code: '#',
   },
   {
@@ -140,8 +140,19 @@ export const projects = [
       'A 3D, animated developer portfolio built with React Three Fiber, Framer Motion, and Tailwind CSS.',
     tech: ['React', 'Three.js', 'Framer Motion'],
     image:
-      'https://images.unsplash.com/photo-1550439062-609e1531270e?q=80&w=800&auto=format&fit=crop',
+      '/projects/adarsh-portfolio.png',
     demo: 'https://adarshp-one.vercel.app',
+    code: '#',
+  },
+
+    {
+    title: 'orientation feedback form csc college',
+    description:
+      'A feedback form for orientation program of csc college built with React and Tailwind CSS.',
+    tech: ['React', 'Three.js', 'Framer Motion'],
+    image:
+      '/projects/csc-feedback.png',
+    demo: 'https://csc-orientation.vercel.app',
     code: '#',
   },
 ]
